@@ -43,7 +43,7 @@ public class Addgrades extends AppCompatActivity implements View.OnClickListener
         values.put("sno", sno);
         values.put("cno", cno);
         values.put("grade", grade);
-        StuGrade_DBHelper dbhelper = new StuGrade_DBHelper(this, "SQLtest", null, 1);
+        StuGrade_DBHelper dbhelper = new StuGrade_DBHelper(this);
         //得到可写的SQLiteDatabase对象
         SQLiteDatabase db = dbhelper.getWritableDatabase();
         //调用insert方法，将数据插入数据库

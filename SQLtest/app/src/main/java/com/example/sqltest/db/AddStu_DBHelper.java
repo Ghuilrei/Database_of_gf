@@ -4,19 +4,22 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class StuGrade_DBHelper extends SQLiteOpenHelper {
+public class AddStu_DBHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static String name = "SQLTest";
     private static SQLiteDatabase.CursorFactory factory = null;
     private static int version = 1;
 
-    private static final String CREATE_USER = "create table SC (" +
-            "sno integer," +
-            "cno integer," +
-            "grade smallint)";
+    private static final String CREATE_USER = "create table Student (" +
+            "sno char(10) primary key, " +
+            "sname char(10) not null, " +
+            "ssex char(5) check(ssex='男' or ssex='女'), " +
+            "sage smallint check(sage>0), " +
+            "sphone char(20), " +
+            "sps char(20))";
 
-    public StuGrade_DBHelper(Context context) {
+    public AddStu_DBHelper(Context context) {
         super(context, name, factory, version);
         this.context = context;
     }
@@ -31,7 +34,7 @@ public class StuGrade_DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // TODO 软件版本号发生改变时调用
-        db.execSQL("drop table if exists SC");
+        db.execSQL("drop table if exists Student");
         onCreate(db);
     }
 }

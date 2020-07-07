@@ -3,7 +3,6 @@ package com.example.sqltest.teacher;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -56,17 +55,14 @@ public class Querygrade_res extends AppCompatActivity{
 
             TextView et_sno = new TextView(Querygrade_res.this);
             et_sno.setText(Integer.toString(sno.get(i)));
-            System.out.println(sno.get(i));
             tablerow1.addView(et_sno);
 
             TextView et_cno = new TextView(Querygrade_res.this);
             et_cno.setText(Integer.toString(cno.get(i)));
-            System.out.println(cno.get(i));
             tablerow1.addView(et_cno);
 
             TextView et_grade = new TextView(Querygrade_res.this);
             et_grade.setText(Integer.toString(grade.get(i)));
-            System.out.println(grade.get(i));
             tablerow1.addView(et_grade);
 
             table.addView(tablerow1, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));

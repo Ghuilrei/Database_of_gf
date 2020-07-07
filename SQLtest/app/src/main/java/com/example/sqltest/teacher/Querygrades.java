@@ -3,27 +3,18 @@ package com.example.sqltest.teacher;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.R;
 import com.example.sqltest.db.StuGrade_DBHelper;
-import com.example.sqltest.tool.Data;
-import com.example.sqltest.tool.SimpleTableView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Querygrades extends AppCompatActivity implements View.OnClickListener {
     private EditText query_Sno;
@@ -48,7 +39,7 @@ public class Querygrades extends AppCompatActivity implements View.OnClickListen
 //        System.out.println("sno:'" + query_Sno.getText().toString().equals("") + "' cno:'" + query_Cno.getText().toString().equals("")+"'");
         String sno = query_Sno.getText().toString().equals("") ? "NULL": query_Sno.getText().toString();
         String cno = query_Cno.getText().toString().equals("") ? "NULL": query_Cno.getText().toString();
-        StuGrade_DBHelper dbhelper = new StuGrade_DBHelper(this, "SQLtest", null, 1);
+        StuGrade_DBHelper dbhelper = new StuGrade_DBHelper(this);
         //得到可读的SQLiteDatabase对象
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         //参数1：表名
