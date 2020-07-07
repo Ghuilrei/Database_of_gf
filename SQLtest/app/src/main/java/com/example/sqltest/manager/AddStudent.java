@@ -1,7 +1,6 @@
 package com.example.sqltest.manager;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +13,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.R;
-import com.example.sqltest.db.AddStu_DBHelper;
+import com.example.sqltest.db.Student_DBHelper;
+import static com.example.androiddemo.tool.StaticTool.GetMD5;
+
 import com.facebook.stetho.Stetho;
+
 
 public class AddStudent extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
@@ -95,8 +97,8 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
             values.put("ssex", Ssex);
             values.put("sage", Integer.getInteger(editText_Sage.getText().toString()));
             values.put("sphone", editText_Phone.getText().toString());
-            values.put("sps", editText_Password.getText().toString());
-            AddStu_DBHelper dbhelper = new AddStu_DBHelper(this);
+            values.put("sps", GetMD5(editText_Password.getText().toString()));
+            Student_DBHelper dbhelper = new Student_DBHelper(this);
             //得到可写的SQLiteDatabase对象
             SQLiteDatabase db = dbhelper.getWritableDatabase();
             //调用insert方法，将数据插入数据库

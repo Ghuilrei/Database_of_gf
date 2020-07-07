@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class AddStu_DBHelper extends SQLiteOpenHelper {
+public class Student_DBHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static String name = "SQLTest";
@@ -17,9 +17,9 @@ public class AddStu_DBHelper extends SQLiteOpenHelper {
             "ssex char(5) check(ssex='男' or ssex='女'), " +
             "sage smallint check(sage>0), " +
             "sphone char(20), " +
-            "sps char(20))";
+            "sps text)";
 
-    public AddStu_DBHelper(Context context) {
+    public Student_DBHelper(Context context) {
         super(context, name, factory, version);
         this.context = context;
     }
