@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.R;
 import com.example.sqltest.db.StuGrade_DBHelper;
-import com.example.sqltest.db.StuLogin_DBHelper;
 
 public class Addgrades extends AppCompatActivity implements View.OnClickListener{
 

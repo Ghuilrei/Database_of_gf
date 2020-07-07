@@ -21,6 +21,7 @@
         <activity android:name=".teacher.Addgrades"></activity>
         <activity android:name=".teacher.Updategrades"></activity>
         <activity android:name=".teacher.Querygrades"></activity>
+        <activity android:name=".teacher.Querygrade_res"></activity>
 <!--        <activity android:name=".Findgrades"></activity>-->
 <!--        <activity android:name=".UpdatePassword"></activity>-->
     </application>

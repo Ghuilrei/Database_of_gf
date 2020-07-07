@@ -39,27 +39,11 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.button3){
-//            //实例化弹窗
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            //定义内容
-//            AlertDialog alertDialog = builder.create();
-//            View view = View.inflate(getApplicationContext(),R.layout.addgrade,null);
-//            alertDialog.setView(view);
-//            //显示
-//            alertDialog.show();
 
             Intent intent = new Intent(this, Addgrades.class);
             startActivity(intent);
         }
         else if (v.getId()==R.id.button8){
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            //定义内容
-//            AlertDialog alertDialog = builder.create();
-//            View view = View.inflate(getApplicationContext(),R.layout.addgrade,null);
-//            alertDialog.setView(view);
-//            //显示
-//            alertDialog.show();
-
             Intent intent = new Intent(this, Updategrades.class);
             startActivity(intent);
         }

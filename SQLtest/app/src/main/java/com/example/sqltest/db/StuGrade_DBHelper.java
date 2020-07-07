@@ -10,8 +10,8 @@ public class StuGrade_DBHelper extends SQLiteOpenHelper {
     Context context;
 
     private static final String CREATE_USER = "create table SC (" +
-            "sno integer primary key autoincrement," +
-            "cno integer unique," +
+            "sno integer," +
+            "cno integer," +
             "grade smallint)";
 
     public StuGrade_DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
