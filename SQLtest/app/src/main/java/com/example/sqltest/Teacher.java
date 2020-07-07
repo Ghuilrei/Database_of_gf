@@ -8,6 +8,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sqltest.teacher.Addgrades;
+import com.example.sqltest.teacher.Querygrades;
+import com.example.sqltest.teacher.Updategrades;
+
 public class Teacher extends AppCompatActivity implements View.OnClickListener {
 
     private Button button3;
@@ -35,31 +39,37 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.button3){
-            //实例化弹窗
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            //定义内容
-            AlertDialog alertDialog = builder.create();
-            View view = View.inflate(getApplicationContext(),R.layout.addgrade,null);
-            alertDialog.setView(view);
-            //显示
-            alertDialog.show();
+//            //实例化弹窗
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            //定义内容
+//            AlertDialog alertDialog = builder.create();
+//            View view = View.inflate(getApplicationContext(),R.layout.addgrade,null);
+//            alertDialog.setView(view);
+//            //显示
+//            alertDialog.show();
+
+            Intent intent = new Intent(this, Addgrades.class);
+            startActivity(intent);
         }
         else if (v.getId()==R.id.button8){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            //定义内容
-            AlertDialog alertDialog = builder.create();
-            View view = View.inflate(getApplicationContext(),R.layout.addgrade,null);
-            alertDialog.setView(view);
-            //显示
-            alertDialog.show();
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            //定义内容
+//            AlertDialog alertDialog = builder.create();
+//            View view = View.inflate(getApplicationContext(),R.layout.addgrade,null);
+//            alertDialog.setView(view);
+//            //显示
+//            alertDialog.show();
+
+            Intent intent = new Intent(this, Updategrades.class);
+            startActivity(intent);
         }
         else if(v.getId() == R.id.button9){
-            Intent intent = new Intent(Teacher.this, Findgrades.class);
+            Intent intent = new Intent(this, Querygrades.class);
             startActivity(intent);
         }
         else if(v.getId() == R.id.button10){
-            Intent intent = new Intent(Teacher.this, Findgrades.class);
-            startActivity(intent);
+//            Intent intent = new Intent(Teacher.this, Findgrades.class);
+//            startActivity(intent);
         }
         else if(v.getId()==R.id.button11){
 

@@ -6,15 +6,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 
-public class DataBaseHelper extends SQLiteOpenHelper {
+public class StuLogin_DBHelper extends SQLiteOpenHelper {
 
     Context context;
 
-    private static final String CREATE_USER = "create table user (" +
+    private static final String CREATE_USER = "create table StuLogin (" +
             "sno integer primary key autoincrement," +
-            "sname varchar(20))";
+            "password text)";
 
-    public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public StuLogin_DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         this.context = context;
     }

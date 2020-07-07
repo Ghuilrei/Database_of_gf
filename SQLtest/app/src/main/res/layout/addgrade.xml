@@ -13,13 +13,13 @@
         android:layout_marginLeft="30dp"
         android:textSize="29dp"
         android:hint="学生学号"/>
+
     <EditText
         android:id="@+id/eidttext1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="84dp"
         android:layout_marginLeft="30dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/text2"
@@ -29,13 +29,13 @@
         android:layout_marginLeft="30dp"
         android:textSize="29dp"
         android:hint="课程号"/>
+
     <EditText
         android:id="@+id/eidttext2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="79dp"
         android:layout_marginLeft="30dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"
@@ -44,20 +44,21 @@
         android:layout_marginLeft="30dp"
         android:textSize="29dp"
         android:hint="成绩"/>
+
     <EditText
         android:id="@+id/eidttext3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="89dp"
         android:layout_marginLeft="30dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
 
     <Button
+        android:id="@+id/btn_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="150dp"
-        android:hint="确定"/>
+        android:layout_marginTop="20dp"
+        android:hint="确定" />
 
 
 

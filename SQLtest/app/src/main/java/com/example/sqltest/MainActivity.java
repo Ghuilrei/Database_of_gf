@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.facebook.stetho.Stetho;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText eidttext;
@@ -21,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 数据库连接初始化
+        Stetho.initializeWithDefaults(this);
 
         //初始化信息
         eidttext = (EditText)findViewById(R.id.eidttext);
@@ -44,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view.getId()==R.id.button && input_sno.equals("1234")) {
             Intent intent1 = new Intent(MainActivity.this, Student.class);
             startActivity(intent1);
-            //setContentView(R.layout.Student);
         }
         else if(view.getId() == R.id.button &&input_sno.equals("2345"))
         {

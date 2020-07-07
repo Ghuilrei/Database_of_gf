@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="130dp"
-            android:text="添加学生成绩" />
+            android:text="添加课程信息" />
 
         <Button
             android:id="@+id/button13"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="190dp"
-            android:text="修改学生信息" />
+            android:text="修改课程信息" />
 
         <Button
             android:id="@+id/button14"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="250dp"
-            android:text="查找学生信息" />
+            android:text="查找课程信息" />
 
         <Button
             android:id="@+id/button15"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="310dp"
-            android:text="删除学生信息" />
+            android:text="删除课程信息" />
 
         <Button
             android:id="@+id/button16"
@@ -82,38 +82,6 @@
             android:layout_marginLeft="240dp"
             android:layout_marginTop="310dp"
             android:text=" 删除教师信息" />
-
-        <Button
-            android:id="@+id/button20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="430dp"
-            android:text=" 添加课程信息" />
-
-        <Button
-            android:id="@+id/button21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="490dp"
-            android:text=" 修改课程信息" />
-
-        <Button
-            android:id="@+id/button22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="550dp"
-            android:text=" 查找课程信息" />
-
-        <Button
-            android:id="@+id/button23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="610dp"
-            android:text=" 删除课程信息" />
 
     </RelativeLayout>
 </LinearLayout>
