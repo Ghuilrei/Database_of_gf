@@ -31,7 +31,7 @@
         android:hint="课程号"/>
 
     <EditText
-        android:id="@+id/eidttext2"
+        android:id="@+id/main_password"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:layout_marginLeft="30dp"

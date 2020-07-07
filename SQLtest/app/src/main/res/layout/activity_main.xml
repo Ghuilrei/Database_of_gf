@@ -14,7 +14,7 @@
     <!--输入密码-->
 
     <EditText
-        android:id="@+id/eidttext"
+        android:id="@+id/main_userid"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
@@ -23,7 +23,7 @@
         android:singleLine="true" />
 
     <EditText
-        android:id="@+id/eidttext2"
+        android:id="@+id/main_password"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
@@ -33,7 +33,7 @@
         android:singleLine="true" />
         <!--登录按钮-->
     <Button
-        android:id="@+id/button"
+        android:id="@+id/main_btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"

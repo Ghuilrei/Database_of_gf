@@ -26,7 +26,7 @@ public class Addgrades extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.addgrade);
 
         editText_Sno = findViewById(R.id.eidttext1);
-        editText_Cno = findViewById(R.id.eidttext2);
+        editText_Cno = findViewById(R.id.main_password);
         editText_Grade = findViewById(R.id.eidttext3);
         btn_confirm = findViewById(R.id.btn_confirm);
 
