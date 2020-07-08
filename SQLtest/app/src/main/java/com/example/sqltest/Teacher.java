@@ -1,6 +1,7 @@
 package com.example.sqltest;
 
 import android.content.Intent;
+import android.content.SyncStats;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,10 +20,15 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
     private Button button9;
     private Button button10;
     private Button button11;
+    String Tno;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher);
+
+        Tno = getIntent().getStringExtra("Tno");
+
         button3 = (Button)findViewById(R.id.button3);//添加学生成绩
         button8 = (Button)findViewById(R.id.button8);//修改学生成绩
         button9 = (Button)findViewById(R.id.button9);//查询学生成绩
@@ -39,7 +45,6 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.button3){
-
             Intent intent = new Intent(this, Addgrades.class);
             startActivity(intent);
         }
@@ -52,7 +57,8 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
             startActivity(intent);
         }
         else if(v.getId() == R.id.button10){
-//            Intent intent = new Intent(Teacher.this, Findgrades.class);
+//            Intent intent = new Intent(Teacher.this, Querygrades_stu.class);
+//            intent.putExtra("Tno", Tno);
 //            startActivity(intent);
         }
         else if(v.getId()==R.id.button11){

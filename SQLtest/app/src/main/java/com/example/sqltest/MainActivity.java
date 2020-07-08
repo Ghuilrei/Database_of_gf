@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.sqltest.db.Student_DBHelper;
+import com.example.sqltest.db.DBHelper;
 import com.facebook.stetho.Stetho;
 
 import static com.example.androiddemo.tool.StaticTool.GetMD5;
@@ -55,11 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        // 管理员登陆
         if (userid.equals("admin") && password.equals("root"))  {
             Intent intent = new Intent(this,Manager.class);
             startActivity(intent);
         }
-        else if(Integer.getInteger(userid) > 5000) {
+
+        // 学生登陆
+        else if(Integer.parseInt(userid) < 5000) {
             if (Stu_Login(userid, password)) {
                 Intent intent1 = new Intent(this, Student.class);
                 intent1.putExtra("Sno", userid);
@@ -73,7 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dialog.show();
             }
         }
-        else if(view.getId() == R.id.main_btn_login &&userid.equals("2345"))
+
+        // 教师登陆
+        else if(Integer.parseInt(userid) >= 5000)
         {
 
             if (Tea_Login(userid, password)) {
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public boolean Stu_Login (String userid, String password) {
-        Student_DBHelper dbhelper = new Student_DBHelper(this);
+        DBHelper dbhelper = new DBHelper(this);
         //得到可读的SQLiteDatabase对象
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         //参数1：表名
@@ -107,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public boolean Tea_Login (String userid,  String  password) {
-        return userid.equals("2345");
+        return userid.equals("6666");
     }
 
     public boolean check_Null(String userid, String password) {

@@ -1,6 +1,7 @@
 package com.example.sqltest.manager;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.R;
-import com.example.sqltest.db.Student_DBHelper;
+import com.example.sqltest.db.DBHelper;
+
 import static com.example.androiddemo.tool.StaticTool.GetMD5;
 
 import com.facebook.stetho.Stetho;
@@ -60,14 +62,26 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
                 dialog.setTitle("成功！");//设置对话框的标题
                 dialog.setMessage("数据已成功导入");//设置对话框的内容
                 dialog.setCancelable(false);//设置对话框是否可以取消
-                dialog.setPositiveButton("Confirm", null);
+                dialog.setPositiveButton("Confirm", new DialogInterface. OnClickListener() {//确定按钮的点击事件
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
                 dialog.show();
             } else {
                 AlertDialog.Builder dialog = new AlertDialog.Builder (this);//通过AlertDialog.Builder创建出一个AlertDialog的实例
                 dialog.setTitle("失败！");//设置对话框的标题
                 dialog.setMessage("数据未能成功导入");//设置对话框的内容
                 dialog.setCancelable(false);//设置对话框是否可以取消
-                dialog.setPositiveButton("Confirm", null);
+                dialog.setPositiveButton("Confirm", new DialogInterface. OnClickListener() {//确定按钮的点击事件
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
                 dialog.show();
             }
         } else {
@@ -98,7 +112,7 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
             values.put("sage", Integer.getInteger(editText_Sage.getText().toString()));
             values.put("sphone", editText_Phone.getText().toString());
             values.put("sps", GetMD5(editText_Password.getText().toString()));
-            Student_DBHelper dbhelper = new Student_DBHelper(this);
+            DBHelper dbhelper = new DBHelper(this);
             //得到可写的SQLiteDatabase对象
             SQLiteDatabase db = dbhelper.getWritableDatabase();
             //调用insert方法，将数据插入数据库

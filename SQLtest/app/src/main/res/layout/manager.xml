@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/manager">
+    android:layout_height="match_parent">
+
+<!--    android:background="@drawable/manager"-->
 
 
     <TextView
@@ -20,7 +21,7 @@
         android:id="@+id/bt_add_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="130dp"
         android:text="添加学生信息" />
 
@@ -28,7 +29,7 @@
         android:id="@+id/bt_up_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="190dp"
         android:text="修改学生信息" />
 
@@ -36,7 +37,7 @@
         android:id="@+id/bt_que_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="250dp"
         android:text="查找学生信息" />
 
@@ -44,7 +45,7 @@
         android:id="@+id/bt_del_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="310dp"
         android:text="删除学生信息" />
 
@@ -52,7 +53,7 @@
         android:id="@+id/bt_add_th"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="170dp"
         android:layout_marginTop="130dp"
         android:text="添加教师信息" />
 
@@ -60,7 +61,7 @@
         android:id="@+id/bt_up_th"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="170dp"
         android:layout_marginTop="190dp"
         android:text=" 修改教师信息" />
 
@@ -68,7 +69,7 @@
         android:id="@+id/bt_que_th"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="170dp"
         android:layout_marginTop="250dp"
         android:text=" 查找教师信息" />
 
@@ -76,7 +77,7 @@
         android:id="@+id/bt_del_th"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="170dp"
         android:layout_marginTop="310dp"
         android:text=" 删除教师信息" />
 
@@ -84,32 +85,32 @@
         android:id="@+id/bt_add_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="390dp"
         android:text=" 添加课程信息" />
 
     <Button
         android:id="@+id/bt_up_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="490dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="390dp"
         android:text=" 修改课程信息" />
 
     <Button
         android:id="@+id/bt_que_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="450dp"
         android:text=" 查找课程信息" />
 
     <Button
         android:id="@+id/bt_del_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="610dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="450dp"
         android:text=" 删除课程信息" />
 
 </RelativeLayout>

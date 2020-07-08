@@ -1,4 +1,4 @@
-package com.example.sqltest.teacher;
+package com.example.sqltest.tool;
 
 import android.content.Intent;
 import android.graphics.Color;

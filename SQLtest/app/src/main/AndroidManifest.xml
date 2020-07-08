@@ -9,22 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<!--        <activity android:name=".MainActivity">-->
-        <activity android:name=".manager.AddStudent">
+        <activity android:name=".MainActivity">
+<!--        <activity android:name=".manager.AddStudent">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-<!--        <activity android:name=".manager.AddStudent"></activity>-->
+<!--        <activity android:name=".MainActivity"></activity>-->
         <activity android:name=".Student"></activity>
         <activity android:name=".Teacher"></activity>
+        <activity android:name=".Manager"></activity>
+
+        <!--教师-->
         <activity android:name=".teacher.Addgrades"></activity>
         <activity android:name=".teacher.Updategrades"></activity>
         <activity android:name=".teacher.Querygrades"></activity>
-        <activity android:name=".teacher.Querygrade_res"></activity>
+        <activity android:name=".tool.Querygrade_res"></activity>
+
+        <!--管理员-->
+        <activity android:name=".manager.AddStudent"></activity>
     </application>
 
 </manifest>

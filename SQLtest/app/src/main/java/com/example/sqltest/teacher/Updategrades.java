@@ -13,7 +13,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.R;
-import com.example.sqltest.db.StuGrade_DBHelper;
+import com.example.sqltest.db.DBHelper;
 
 public class Updategrades extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,7 +47,7 @@ public class Updategrades extends AppCompatActivity implements View.OnClickListe
         values.put("sno", sno);
         values.put("cno", cno);
         values.put("grade", grade);
-        StuGrade_DBHelper dbhelper = new StuGrade_DBHelper(this);
+        DBHelper dbhelper = new DBHelper(this);
         //得到可写的SQLiteDatabase对象
         SQLiteDatabase db = dbhelper.getWritableDatabase();
         //调用insert方法，将数据插入数据库
@@ -66,7 +66,7 @@ public class Updategrades extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                StuGrade_DBHelper dbhelper = new StuGrade_DBHelper(Updategrades.this);
+                DBHelper dbhelper = new DBHelper(Updategrades.this);
                 //得到可写的SQLiteDatabase对象
                 SQLiteDatabase db = dbhelper.getWritableDatabase();
                 //调用delete方法，删除数据
