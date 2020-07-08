@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sqltest.manager.AddStudent;
+import com.example.sqltest.manager.Student;
 
 public class Manager extends AppCompatActivity implements View.OnClickListener {
 
@@ -49,14 +49,19 @@ public class Manager extends AppCompatActivity implements View.OnClickListener {
         Intent intent;
         switch (v.getId()) {
             case R.id.bt_add_stu:
-                intent = new Intent(this, AddStudent.class);
+                intent = new Intent(this, Student.class);
+                intent.putExtra("src", 1);
                 startActivity(intent);
                 break;
             case R.id.bt_up_stu:
-
+                intent = new Intent(this, Student.class);
+                intent.putExtra("src", 2);
+                startActivity(intent);
                 break;
             case R.id.bt_que_stu:
-
+                intent = new Intent(this, Student.class);
+                intent.putExtra("src", 3);
+                startActivity(intent);
                 break;
             case R.id.bt_del_stu:
 

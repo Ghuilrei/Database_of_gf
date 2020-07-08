@@ -26,10 +26,14 @@
         <activity android:name=".teacher.Addgrades"></activity>
         <activity android:name=".teacher.Updategrades"></activity>
         <activity android:name=".teacher.Querygrades"></activity>
-        <activity android:name=".tool.Querygrade_res"></activity>
 
         <!--管理员-->
-        <activity android:name=".manager.AddStudent"></activity>
+        <activity android:name=".manager.Student"></activity>
+
+        <activity android:name=".student.Querygrades_stu"></activity>
+
+        <activity android:name=".tool.Grade.Querygrade_res"></activity>
+        <activity android:name=".tool.Student.Querystudent_res"></activity>
     </application>
 
 </manifest>

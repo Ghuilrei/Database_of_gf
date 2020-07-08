@@ -55,8 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        // TODO 修改类型
         // 管理员登陆
-        if (userid.equals("admin") && password.equals("root"))  {
+        if (userid.equals("0000") && password.equals("root"))  {
             Intent intent = new Intent(this,Manager.class);
             startActivity(intent);
         }

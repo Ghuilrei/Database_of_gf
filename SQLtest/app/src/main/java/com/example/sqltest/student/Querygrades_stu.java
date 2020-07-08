@@ -5,7 +5,7 @@ import android.content.Context;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sqltest.tool.FindGrades;
+import com.example.sqltest.tool.Grade.FindGrades;
 
 
 public class Querygrades_stu extends AppCompatActivity {

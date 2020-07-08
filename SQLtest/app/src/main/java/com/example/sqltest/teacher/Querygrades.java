@@ -1,8 +1,5 @@
 package com.example.sqltest.teacher;
 
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.R;
-import com.example.sqltest.tool.FindGrades;
+import com.example.sqltest.tool.Grade.FindGrades;
 
 
 public class Querygrades extends AppCompatActivity implements View.OnClickListener {

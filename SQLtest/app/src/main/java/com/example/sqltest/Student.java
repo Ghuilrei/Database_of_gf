@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.student.Querygrades_stu;
 import com.example.sqltest.student.Updatepd_stu;
-import com.example.sqltest.teacher.Updategrades;
 
 
 public class Student extends AppCompatActivity implements View.OnClickListener{
@@ -46,22 +45,27 @@ public class Student extends AppCompatActivity implements View.OnClickListener{
     }
     @Override
     public void onClick(View v) {
+
+        // 查询成绩
         if(v.getId()==R.id.button4) {
            //转换布局
             Querygrades_stu.Querygrades_stu(this, Sno);
         }
+        // 查询课表
         else if(v.getId() == R.id.button5){
             Intent intent = new Intent(Student.this, Querygrades_stu.class);
             intent.putExtra("Sno", Sno);
             startActivity(intent);
         }
+        // 修改密码
         else  if(v.getId() == R.id.button6){
             ShowaDialog();
         }
+        // 查询个人信息
         else if(v.getId() == R.id.button7){
-            Intent intent = new Intent(Student.this, Querygrades_stu.class);
+            Intent intent = new Intent(Student.this, Updatepd_stu.class);
             intent.putExtra("Sno", Sno);
-            startActivity(intent);
+            startActivityForResult(intent, 1);
         }
     }
 

@@ -63,12 +63,16 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
             startActivity(intent);
         }
         else if(v.getId() == R.id.button10){
+            // 修改教师信息
 //            Intent intent = new Intent(Teacher.this, Querygrades_stu.class);
 //            intent.putExtra("Tno", Tno);
 //            startActivity(intent);
         }
         else if(v.getId()==R.id.button11){
-
+            // 修改密码
+//            Intent intent = new Intent(Teacher.this, Querygrades_stu.class);
+//            intent.putExtra("Tno", Tno);
+//            startActivity(intent);
         }
 
     }
