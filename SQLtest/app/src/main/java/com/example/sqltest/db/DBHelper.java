@@ -11,7 +11,6 @@ public class DBHelper extends SQLiteOpenHelper {
     private static SQLiteDatabase.CursorFactory factory = null;
     private static int version = 1;
 
-    private static final String FOREIGN_KEYS = "PRAGMA foreign_keys = ON";
     private static final String CREATE_STUDENT = "create table Student (" +
             "sno char(10) primary key," +
             "sname char(10) not null," +
@@ -61,7 +60,6 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     //数据库第一次创建时被调用
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(FOREIGN_KEYS);
         db.execSQL(CREATE_STUDENT);
         db.execSQL(CREATE_TEACHER);
         db.execSQL(CREATE_COURSE);

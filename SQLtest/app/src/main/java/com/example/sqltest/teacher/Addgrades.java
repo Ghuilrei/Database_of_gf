@@ -39,11 +39,12 @@ public class Addgrades extends AppCompatActivity implements View.OnClickListener
     public boolean db_add() {
         String sno = editText_Sno.getText().toString();
         String cno = editText_Cno.getText().toString();
-        String grade =editText_Grade.getText().toString();
-        System.out.println("sno:"+sno+" cno:"+cno+" grade:"+grade);
+        String grade = editText_Grade.getText().toString();
+        String tno = getIntent().getStringExtra("Tno");
         ContentValues values = new ContentValues();
         values.put("sno", sno);
         values.put("cno", cno);
+        values.put("tno", tno);
         values.put("grade", grade);
         DBHelper dbhelper = new DBHelper(this);
         //得到可写的SQLiteDatabase对象

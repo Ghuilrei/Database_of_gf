@@ -1,16 +1,21 @@
 package com.example.sqltest;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sqltest.student.Querygrades_stu;
+import com.example.sqltest.student.Updatepd_stu;
+import com.example.sqltest.teacher.Updategrades;
 
 
 public class Student extends AppCompatActivity implements View.OnClickListener{
@@ -61,13 +66,60 @@ public class Student extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void ShowaDialog(){
-        //实例化弹框
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-       //定义内容
-        AlertDialog alertDialog = builder.create();
-        View view = View.inflate(getApplicationContext(),R.layout.updatepassword,null);
-        alertDialog.setView(view);
-        //显示
-        alertDialog.show();
+        final EditText editText = new EditText(this);
+        new AlertDialog.Builder(this)
+            .setTitle("输入旧密码：")
+            .setView(editText)
+            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // 如果旧密码正确
+                    if (Updatepd_stu.comfirm_pd(Student.this, Sno, editText.getText().toString())){
+                        final EditText editText1 = new EditText(Student.this);
+                        new AlertDialog.Builder(Student.this)
+                                .setTitle("请输入新密码：")
+                                .setView(editText1)
+                                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // 确认密码
+                                        final EditText editText2 = new EditText(Student.this);
+                                        new AlertDialog.Builder(Student.this)
+                                                .setTitle("确认密码：")
+                                                .setView(editText2)
+                                                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        // TODO Auto-generated method stub
+                                                        if (editText1.getText().toString().equals(editText2.getText().toString())) {
+                                                            Updatepd_stu.updata_pd(Student.this, Sno, editText1.getText().toString());
+                                                            Toast.makeText(Student.this, "修改密码成功。", Toast.LENGTH_SHORT).show();
+                                                        } else {
+                                                            AlertDialog.Builder dialog1 = new AlertDialog.Builder (Student.this);//通过AlertDialog.Builder创建出一个AlertDialog的实例
+                                                            dialog1.setTitle("错误！");//设置对话框的标题
+                                                            dialog1.setMessage("两次输入密码不一致。");//设置对话框的内容
+                                                            dialog1.setCancelable(false);//设置对话框是否可以取消
+                                                            dialog1.setPositiveButton("Confirm", null);
+                                                            dialog1.show();
+                                                        }
+                                                    }
+                                                })
+                                                .setNegativeButton("取消", null).show();
+
+                                    }
+                                })
+                                .setNegativeButton("取消", null).show();
+                    }
+                    else {
+                        AlertDialog.Builder dialog1 = new AlertDialog.Builder (Student.this);//通过AlertDialog.Builder创建出一个AlertDialog的实例
+                        dialog1.setTitle("错误！");//设置对话框的标题
+                        dialog1.setMessage("密码错误。");//设置对话框的内容
+                        dialog1.setCancelable(false);//设置对话框是否可以取消
+                        dialog1.setPositiveButton("Confirm", null);
+                        dialog1.show();
+                    }
+                }
+            })
+            .setNegativeButton("取消", null).show();
     }
 }

@@ -29,28 +29,31 @@ public class FindGrades {
         //参数7：排序方式
         Cursor cursor;
         if (sno.equals("NULL") && cno.equals("NULL")) {
-            cursor = db.query("SC", new String[]{"Sno", "Cno", "Grade"}, "1", null, null, null, null);
+            cursor = db.query("SC", new String[]{"Sno", "Cno", "Tno", "Grade"}, "1", null, null, null, null);
         } else if (sno.equals("NULL")) {
-            cursor = db.query("SC", new String[]{"Sno", "Cno", "Grade"}, "cno=?", new String[]{cno}, null, null, null);
+            cursor = db.query("SC", new String[]{"Sno", "Cno", "Tno", "Grade"}, "cno=?", new String[]{cno}, null, null, null);
         } else if (cno.equals("NULL")) {
-            cursor = db.query("SC", new String[]{"Sno", "Cno", "Grade"}, "sno=?", new String[]{sno}, null, null, null);
+            cursor = db.query("SC", new String[]{"Sno", "Cno", "Tno", "Grade"}, "sno=?", new String[]{sno}, null, null, null);
         } else {
-            cursor = db.query("SC", new String[]{"Sno", "Cno", "Grade"}, "sno=? and cno=?", new String[]{sno, cno}, null, null, null);
+            cursor = db.query("SC", new String[]{"Sno", "Cno", "Tno", "Grade"}, "sno=? and cno=?", new String[]{sno, cno}, null, null, null);
         }
-        ArrayList<Integer> L_sno = new ArrayList<>();
-        ArrayList<Integer> L_cno = new ArrayList<>();
-        ArrayList<Integer> L_grade = new ArrayList<>();
+        ArrayList<String> L_sno = new ArrayList<>();
+        ArrayList<String> L_cno = new ArrayList<>();
+        ArrayList<String> L_tno = new ArrayList<>();
+        ArrayList<String> L_grade = new ArrayList<>();
         while(cursor.moveToNext()) {
-            L_sno.add(cursor.getInt(cursor.getColumnIndex("sno")));
-            L_cno.add(cursor.getInt(cursor.getColumnIndex("cno")));
-            L_grade.add(cursor.getInt(cursor.getColumnIndex("grade")));
+            L_sno.add(cursor.getString(cursor.getColumnIndex("sno")));
+            L_cno.add(cursor.getString(cursor.getColumnIndex("cno")));
+            L_tno.add(cursor.getString(cursor.getColumnIndex("tno")));
+            L_grade.add(cursor.getString(cursor.getColumnIndex("grade")));
             flag = true;
         }
         if (flag) {
             Intent intent = new Intent(context, Querygrade_res.class);
-            intent.putIntegerArrayListExtra("sno", L_sno);
-            intent.putIntegerArrayListExtra("cno", L_cno);
-            intent.putIntegerArrayListExtra("grade", L_grade);
+            intent.putStringArrayListExtra("sno", L_sno);
+            intent.putStringArrayListExtra("cno", L_cno);
+            intent.putStringArrayListExtra("tno", L_tno);
+            intent.putStringArrayListExtra("grade", L_grade);
             context.startActivity(intent);
         }  else {
             AlertDialog.Builder dialog = new AlertDialog.Builder (context);//通过AlertDialog.Builder创建出一个AlertDialog的实例

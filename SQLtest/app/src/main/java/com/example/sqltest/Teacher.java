@@ -45,15 +45,21 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.button3){
+            // 添加成绩
             Intent intent = new Intent(this, Addgrades.class);
+            intent.putExtra("Tno", Tno);
             startActivity(intent);
         }
         else if (v.getId()==R.id.button8){
+            // 更改成绩
             Intent intent = new Intent(this, Updategrades.class);
+            intent.putExtra("Tno", Tno);
             startActivity(intent);
         }
         else if(v.getId() == R.id.button9){
+            // 查询成绩
             Intent intent = new Intent(this, Querygrades.class);
+            intent.putExtra("Tno", Tno);
             startActivity(intent);
         }
         else if(v.getId() == R.id.button10){
